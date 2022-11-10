@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MY\\My\\UP\\CL\\Jatinder\\Projects\\Messaging Platform\\Messaging-Platform\\Messaging Portal\\Messaging Portal\\Messaging Portal.csproj": {}
+    "D:\\New folder\\Messaging Portal\\Messaging Portal\\Messaging Portal.csproj": {}
   },
   "projects": {
-    "D:\\MY\\My\\UP\\CL\\Jatinder\\Projects\\Messaging Platform\\Messaging-Platform\\Messaging Portal\\Messaging Portal\\Messaging Portal.csproj": {
+    "D:\\New folder\\Messaging Portal\\Messaging Portal\\Messaging Portal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MY\\My\\UP\\CL\\Jatinder\\Projects\\Messaging Platform\\Messaging-Platform\\Messaging Portal\\Messaging Portal\\Messaging Portal.csproj",
+        "projectUniqueName": "D:\\New folder\\Messaging Portal\\Messaging Portal\\Messaging Portal.csproj",
         "projectName": "Messaging Portal",
-        "projectPath": "D:\\MY\\My\\UP\\CL\\Jatinder\\Projects\\Messaging Platform\\Messaging-Platform\\Messaging Portal\\Messaging Portal\\Messaging Portal.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\MY\\My\\UP\\CL\\Jatinder\\Projects\\Messaging Platform\\Messaging-Platform\\Messaging Portal\\Messaging Portal\\obj\\",
+        "projectPath": "D:\\New folder\\Messaging Portal\\Messaging Portal\\Messaging Portal.csproj",
+        "packagesPath": "C:\\Users\\Shah Fahad Ahmad\\.nuget\\packages\\",
+        "outputPath": "D:\\New folder\\Messaging Portal\\Messaging Portal\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shah Fahad Ahmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,14 +42,19 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
