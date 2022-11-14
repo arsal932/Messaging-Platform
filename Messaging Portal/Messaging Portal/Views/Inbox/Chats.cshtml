@@ -10,13 +10,13 @@
                     <div class="card-header">
                         @*<h4 class="card-title">Draggable Events</h4>*@
                         <div class="form-inline">
-                            <div class="input-group" data-widget="sidebar-search">
-                                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                            <div class="input-group">
+                                <input class="form-control form-control-sidebar" id="search" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
-                                    <button class="btn btn-sidebar">
+                                    <button id="btn_search" onclick="    Load();" class="btn btn-sidebar">
                                         <i class="fas fa-search fa-fw"></i>
                                     </button>
-                                    <button class="btn btn-sidebar btn-primary float-right">
+                                    <button id="btn_newchat" onclick="loadView('/Inbox/NewChat','myModal','myModalContent')" class="btn btn-sidebar btn-info float-right">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
@@ -25,72 +25,95 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">Show All <span class="float-right"><i class="fa fa-angle-down"></i></span> </div>
+                            <div class="col-md-6"><h7>Show All</h7>  <span class="float-right"><i class="fa fa-angle-down"></i></span> </div>
                             <div class="col-md-6">Most Recent <span class="float-right"><i class="fa fa-angle-down"></i></span> </div>
                         </div>
                         <hr />
-                        <div class="card-footer card-comments">
-                <div class="card-comment">                  
-                  <div class="comment-text">
-                    <span class="username">
-                      Maria Gonzales
-                      <span class="text-muted float-right">8:03 PM Today</span>
-                    </span><!-- /.username -->
-                    <p class="chat-content-small"> It is a long established fact that a reader will be distracted
-                    by the readable content of a page when looking at its layout.</p>                    
-                  </div>
-                  <!-- /.comment-text -->
-                </div>
-                <!-- /.card-comment -->
-                <div class="card-comment">
-                  <!-- User image -->
-                  <img class="img-circle img-sm" src="../dist/img/user4-128x128.jpg" alt="User Image">
-
-                  <div class="comment-text">
-                    <span class="username">
-                      Luna Stark
-                      <span class="text-muted float-right">8:03 PM Today</span>
-                    </span><!-- /.username -->
-                    It is a long established fact that a reader will be distracted
-                    by the readable content of a page when looking at its layout.
-                  </div>
-                  <!-- /.comment-text -->
-                </div>
-                <!-- /.card-comment -->
-              </div>
-                       @* <div class="card active-chat">
-                            <div class="card-header">                                
-                                <h5 class="card-title chat-Header">Alexander</h5>
-                                <i><span class="float-right chat-Header-Time">23 Minutes Ago</span></i>                            
-
-                                <p class="chat-content-small">Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...</p>
-                            </div>
+                        <div id="chats" class="card-footer card-comments">
+                            <div class="loader" id="loader"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
                         </div>
-
-                         <div class="card">
-                            <div class="card-header">                                
-                                <h5 class="card-title"><b>Alexa</b></h5>
-                                <i><span class="float-right">50 Minutes Ago</span></i>
-                            </div>
-                            <div class="card-body">                                
-                                <p>Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...</p>
-                            </div>
-                        </div>*@
-                        <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
                 </div>
             </div>
             <!-- /.col -->
-            <div class="col-md-9">
-                <div class="card card-primary">
-                    <div class="card-body p-0">
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
             <!-- /.col -->
+        </div>
+        <div class="col-md-8">
+            <div class="card card-info card-outline direct-chat direct-chat-info shadow-none">
+                <div class="loader" style="display:none;" id="messages_loader"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+                <div class="card-header">
+                    <h3 class="card-title">Shadow - None</h3>
+                </div>
+                <div class="card-body" id="div_messages">
+                </div>
+            </div>
+        </div>
+        <div id='myModal' class='modal'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id='myModalContent'></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
+<script>
+    function changeStyle(value) {
+        for (var i = 0; i < 2; i++) {
+            document.getElementById("chat_" + value).className = "chat";
+        }
+        document.getElementById("chat_" + value).className = "active-chat";
+    }
+    function LoadMessages(value) {
+        changeStyle(value);
+        var loader = document.getElementById("messages_loader");
+        loader.style.display = "block";
+        $("#div_messages").load("/Inbox/GetChatMessages", function(response, status, xhr) {
+            if (status == "success") {
+                loader.style.display = "none";
+
+            } else if (status == "error" || status == "timeout") {
+                // ERROR and TIMEOUT request //
+
+                var msg = "Sorry! An error has occurred. Please try again later";
+
+            } else if (status == "notmodified") {
+                // NOT MODIFIED request (likely cached) //
+
+            } else if (status == "abort") {
+                // ABORTED request //
+
+            }
+        });
+    }
+    function Load() {
+        var searchText = document.getElementById("search").value;
+        $("#chats").load("/Inbox/GetChats", { search: searchText });
+    }
+    window.onload = function() {
+        document.getElementById("inbox").classList.add("active");
+        Load();
+    }
+</script>
+<script>    
+    function loadView(url,modalId,modalContentID) {        
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            url: url,
+            success: function(data) {                
+                $('#'+modalContentID).html(data);
+                $('#'+modalId).modal(options);
+                $('#'+modalId).modal('show');
+
+            },
+            error: function() {
+                alert("An error has occured while loading form.");
+            }
+        });
+    };           
+function hideView(ModalID) {
+    $('#'+ModalID).modal('hide');  
+}
+</script>
