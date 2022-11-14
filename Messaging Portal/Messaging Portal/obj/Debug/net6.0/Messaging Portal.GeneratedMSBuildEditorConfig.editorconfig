@@ -47,12 +47,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/ContactsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcQ29udGFjdHNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/createContact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcY3JlYXRlQ29udGFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/createList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcY3JlYXRlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/DeleteContact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcRGVsZXRlQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/EditContact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcRWRpdENvbnRhY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/getContactsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcZ2V0Q29udGFjdHNMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/getList.cshtml]
@@ -65,10 +89,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcTGlzdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/MapFields.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcTWFwRmllbGRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/New folder/Messaging Portal/Messaging Portal/Views/_ViewImports.cshtml]

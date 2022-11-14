@@ -5,14 +5,14 @@
 <table id="example1" class="table table-bordered ">
     <thead class="table-avatar" style="color:#656565;text-align:center">
         <tr>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-sort-numeric-down"></i> #</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-university"></i> Name</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-calendar-check"></i> Creation Date</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-users"></i> Contacts</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-check"></i> Active</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-times"></i> Invalid</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-times"></i> Opt-Outs</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-check"></i> Actions</th>
+            <th><i class="icon-color fa fa-sort-numeric-down"></i> #</th>
+            <th><i class="icon-color fa fa-university"></i> Name</th>
+            <th><i class="icon-color fa fa-calendar-check"></i> Creation Date</th>
+            <th><i class="icon-color fa fa-users"></i> Contacts</th>
+            <th><i class="icon-color fa fa-check"></i> Active</th>
+            <th><i class="icon-color fa fa-times"></i> Invalid</th>
+            <th><i class="icon-color fa fa-times"></i> Opt-Outs</th>
+            <th><i class="icon-color fa fa-check"></i> Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -44,12 +44,17 @@
                     @Html.DisplayFor(modelItem => item.Opt_Outs)
                 </td>
                 <td class="project-actions text-right">
-                    <button class="btn btn-outline-success btn-sm">
+                    <button class="btn btn-outline-info btn-sm" onclick="    location.href = '/Subscribers/ContactsList';">
+                        <i class="fa fa-users">
+                        </i>
+                        Contacts
+                    </button>
+                    <button class="btn btn-outline-success btn-sm" onclick="loadView('/Subscribers/Edit','myModal','myModalContent','1')">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Edit
                     </button>
-                    <button class="btn btn-outline-danger btn-sm">
+                    <button class="btn btn-outline-danger btn-sm" onclick="loadView('/Subscribers/Delete','myModal','myModalContent','1')">
                         <i class="fas fa-trash">
                         </i>
                         Delete
@@ -61,29 +66,33 @@
     </tbody>
     <tfoot>
         <tr>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-sort-numeric-down"></i> #</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-university"></i> Name</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-calendar-check"></i> Creation Date</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-users"></i> Contacts</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-check"></i> Active</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-times"></i> Invalid</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-times"></i> Opt-Outs</th>
-            <th style="font-weight:400;text-align:center"><i style="color:#17a2b8" class="fa fa-check"></i> Actions</th>
+            <th><i class="icon-color fa fa-sort-numeric-down"></i> #</th>
+            <th><i class="icon-color fa fa-university"></i> Name</th>
+            <th><i class="icon-color fa fa-calendar-check"></i> Creation Date</th>
+            <th><i class="icon-color fa fa-users"></i> Contacts</th>
+            <th><i class="icon-color fa fa-check"></i> Active</th>
+            <th><i class="icon-color fa fa-times"></i> Invalid</th>
+            <th><i class="icon-color fa fa-times"></i> Opt-Outs</th>
+            <th><i class="icon-color fa fa-check"></i> Actions</th>
         </tr>
     </tfoot>
 </table>
 <script>
-    $(function() {       
-       
+    $(function() {
+
         $("#example1").DataTable({
-            "responsive": true, "lengthChange": false, "autoWidth": false,
+            lengthMenu: [
+                [10, 25, 50, 100, -1],
+                [10, 25, 50, 100, 'All'],
+            ],
+            "responsive": true, "lengthChange": true, "autoWidth": false,
             "buttons": [
                 {
                     extend: 'copy',
                     title: 'List',
                     text: window.copyButtonTrans,
                     exportOptions: {
-                        columns: [0, 1, 2,3,4,5,6]
+                        columns: [0, 1, 2, 3, 4, 5, 6]
                     }
                 },
                 {
@@ -91,7 +100,7 @@
                     title: 'List',
                     text: window.csvButtonTrans,
                     exportOptions: {
-                        columns: [0, 1, 2,3,4,5,6]
+                        columns: [0, 1, 2, 3, 4, 5, 6]
                     }
                 },
                 {
@@ -99,7 +108,7 @@
                     title: 'List',
                     text: window.excelButtonTrans,
                     exportOptions: {
-                        columns: [0, 1, 2,3,4,5,6]
+                        columns: [0, 1, 2, 3, 4, 5, 6]
                     }
                 },
                 {
@@ -107,7 +116,7 @@
                     title: 'List',
                     text: window.pdfButtonTrans,
                     exportOptions: {
-                        columns: [0, 1, 2,3,4,5,6]
+                        columns: [0, 1, 2, 3, 4, 5, 6]
                     }
                 },
                 {
@@ -115,7 +124,7 @@
                     title: 'List',
                     text: window.printButtonTrans,
                     exportOptions: {
-                        columns: [0, 1, 2,3,4,5,6]
+                        columns: [0, 1, 2, 3, 4, 5, 6]
                     }
                 },
                 {
@@ -123,7 +132,7 @@
                     title: 'List',
                     text: window.colvisButtonTrans,
                     exportOptions: {
-                        columns: [0, 1, 2,3,4,5,6]
+                        columns: [0, 1, 2, 3, 4, 5, 6]
                     }
                 },
             ]

@@ -11,16 +11,24 @@
                 <div class="card-header">
                     <h3 class="card-title">List</h3>
                     <div class="project-actions text-right">
-                        <button style="margin-left:1px;" class="btn btn-info btn-sm float-right" id="btn_import" onclick="loadView('Subscribers/ImportContacts','myModal','myModalContent')"><i class="fa fa-upload"></i> Import Contacts</button>
-                        <button style="margin-left:1px;" class="btn btn-info btn-sm float-right" id="btn_addcontact" onclick="loadView('/Subscribers/CreateContact','myModal','myModalContent')"><i class="fa fa-user-plus"></i> Add Contact</button>
-                        <button style="margin-left:1px;" class="btn btn-info btn-sm float-right" id="btn_addlist" onclick="loadView('/Subscribers/CreateList','myModal','myModalContent')"><i class="fa fa-th-list"></i> Add List</button>
+                        <button class="button-margin btn btn-info btn-sm float-right" id="btn_listcontacts" onclick="    location.href = '/Subscribers/ContactsList';"><i class="fa fa-users"></i> Contacts List</button>
+                        <button class="button-margin btn btn-info btn-sm float-right" id="btn_addlist" onclick="loadView('/Subscribers/CreateList','myModal','myModalContent')"><i class="fa fa-th-list"></i> Add List</button>
+                        <button class="button-margin btn btn-info btn-sm float-right" id="btn_addcontact" onclick="loadView('/Subscribers/CreateContact','Modal-xl','ModalxlContent')"><i class="fa fa-user-plus"></i> Add Contact</button>
+                        <button class="button-margin btn btn-info btn-sm float-right" id="btn_import" onclick="loadView('/Subscribers/ImportContacts','myModal','myModalContent')"><i class="fa fa-upload"></i> Import Contacts</button>
                     </div>
                 </div>
                 <!-- /.card-header -->
                 <div id="list" class="card-body">
-                    <div class="loader" id="loader">Loading...<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
                 </div>
                 <!-- /.card-body -->
+            </div>
+             <div id='Modal-xl' class='modal'>
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div id='ModalxlContent'></div>
+                    </div>
+                </div>
+
             </div>
             <div id='myModal' class='modal'>
                 <div class="modal-dialog">
@@ -38,16 +46,22 @@
 </div>
 <script>
     function Load() {
+        document.getElementById("list").innerHTML = '<center><span>Loading... <i class="spinner fa fa-sync fa-spin"></i></span></center>';
         $("#list").load("/Subscribers/GetList");
     }
     window.onload = function() {
         document.getElementById("subscribers").classList.add("active");
         Load();
-    }
-    function loadView(url, modalId, modalContentID) {
+    }    
+    function loadView(url, modalId, modalContentID,id) {
         var options = { "backdrop": "static", keyboard: true };
         $.ajax({
+            type: "GET",
             url: url,
+            contentType: "application/json; charset=utf-8",
+            data: { "list":id },
+            datatype: "json",
+
             success: function(data) {
                 $('#' + modalContentID).html(data);
                 $('#' + modalId).modal(options);

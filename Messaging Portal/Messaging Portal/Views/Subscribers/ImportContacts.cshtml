@@ -1,39 +1,135 @@
-﻿
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
- <div class="modal-header">
-                <h4 class="modal-title">New Contact</h4>
-                <button onclick="hideView('myModal')" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="modal-header">
+    <h4 class="modal-title">Import Contacts</h4>
+    <button onclick="hideView('myModal')" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@*<form asp-action="Create" method="post">*@
+<div class="modal-body">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-folder" style="color:#17a2b8"></i></span>
+        </div>
+        <input onchange="Call()" type="file" class="form-control" />
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-list" style="color:#17a2b8"></i></span>
+        </div>
+        <select class="form-control">
+            <option selected value="">Select List</option>
+            <option selected value="">Corona Notification</option>
+            <option selected value="">Exam Notification</option>
+        </select>
+    </div>
+    <div style="display:none" id="next">
+        <label>Mapping Fields</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-sort-alpha-down" style="color:#17a2b8"></i></span>
             </div>
-            <form asp-action="Create" method="post">
-                <div class="modal-body">                                        
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-folder" style="color:#17a2b8"></i></span>
-                        </div>
-                        @*<input type="file" class="form-control" required />*@
-                    </div>
-                    
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-list" style="color:#17a2b8"></i></span>
-                        </div>
-                        <select class="form-control" required>
-                            <option selected value="">Select List</option>
-                            <option selected value="">Corona Notification</option>
-                            <option selected value="">Exam Notification</option>
-                        </select>
-                    </div>                     
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    @*<button  onclick="hideView('myModal'); LoadView('/Subscribers/MapFields','myModal','myModalContent')" class="btn btn-info"><i class="fa fa-arrow-right"></i> Next</button>*@
-                </div>
-            </form>            
+            <select class="form-control" required>
+                <option selected value="">Select First Name</option>
+                <option selected value="">First Name</option>
+                <option selected value="">Last Name</option>
+                <option selected value="">Phone Number</option>
+                <option selected value="">Email</option>
+                <option selected value="">Date of birth</option>
+                <option selected value="">Note</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-sort-alpha-down" style="color:#17a2b8"></i></span>
+            </div>
+            <select class="form-control" required>
+                <option selected value="">Select Last Name</option>
+                <option selected value="">First Name</option>
+                <option selected value="">Last Name</option>
+                <option selected value="">Phone Number</option>
+                <option selected value="">Email</option>
+                <option selected value="">Date of birth</option>
+                <option selected value="">Note</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-phone" style="color:#17a2b8"></i></span>
+            </div>
+            <select class="form-control" required>
+                <option selected value="">Select Phone Number</option>
+                <option selected value="">First Name</option>
+                <option selected value="">Last Name</option>
+                <option selected value="">Phone Number</option>
+                <option selected value="">Email</option>
+                <option selected value="">Date of birth</option>
+                <option selected value="">Note</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-envelope" style="color:#17a2b8"></i></span>
+            </div>
+            <select class="form-control" required>
+                <option selected value="">Select Email</option>
+                <option selected value="">First Name</option>
+                <option selected value="">Last Name</option>
+                <option selected value="">Phone Number</option>
+                <option selected value="">Email</option>
+                <option selected value="">Date of birth</option>
+                <option selected value="">Note</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-calendar" style="color:#17a2b8"></i></span>
+            </div>
+            <select class="form-control" required>
+                <option selected value="">Select Date of birth</option>
+                <option selected value="">First Name</option>
+                <option selected value="">Last Name</option>
+                <option selected value="">Phone Number</option>
+                <option selected value="">Email</option>
+                <option selected value="">Date of birth</option>
+                <option selected value="">Note</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-pencil-alt" style="color:#17a2b8"></i></span>
+            </div>
+            <select class="form-control" required>
+                <option selected value="">Select Note</option>
+                <option selected value="">First Name</option>
+                <option selected value="">Last Name</option>
+                <option selected value="">Phone Number</option>
+                <option selected value="">Email</option>
+                <option selected value="">Date of birth</option>
+                <option selected value="">Note</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="modal-footer justify-content-between">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button onclick="loadNext()" class="btn btn-info"><i class="fa fa-upload"></i> Import</button>
+</div>
+@*</form>*@
+<script>
+    function loadNext() {
+        hideView('myModal');
+        LoadView('/Subscribers/MapFields', 'myModal', 'myModalContent');
+
+    }
+    function Call() {
+        document.getElementById("next").style.display = "block";
+    }
+</script>

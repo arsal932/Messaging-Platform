@@ -10,15 +10,15 @@ public class InboxController : Controller
     [HttpGet]
     public async Task<IActionResult> Chats()
     {
+        ViewBag.page="Inbox";
         return View();
-    }
-    
+    }    
     public async Task<IActionResult> getChats(string search)
     {
         Thread.Sleep(2000);
         return PartialView();
     }
-    
+    [HttpGet]
     public async Task<IActionResult> getChatMessages(int ChatID)
     {
         Thread.Sleep(2000);

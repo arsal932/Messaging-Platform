@@ -29,8 +29,7 @@
                             <div class="col-md-6">Most Recent <span class="float-right"><i class="fa fa-angle-down"></i></span> </div>
                         </div>
                         <hr />
-                        <div id="chats" class="card-footer card-comments">
-                            <div class="loader" id="loader"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+                        <div id="chats" class="card-footer card-comments">                            
                         </div>
                     </div>
                     <!-- /.card -->
@@ -52,7 +51,7 @@
         <div id='myModal' class='modal'>
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div id='myModalContent'></div>
+                    <div id='myModalContent'></div>                    
                 </div>
             </div>
 
@@ -68,11 +67,14 @@
     }
     function LoadMessages(value) {
         changeStyle(value);
-        var loader = document.getElementById("messages_loader");
-        loader.style.display = "block";
+        var div_m = document.getElementById("div_messages");
+        div_m.innerHTML='<center><span>Loading... <i class="spinner fa fa-sync fa-spin"></i></span></center>'+div_m.innerHTML;
+        if(document.getElementById("chat_messages")!=null)
+        {
+            document.getElementById("chat_messages").style.opacity = '0.4';
+        }        
         $("#div_messages").load("/Inbox/GetChatMessages", function(response, status, xhr) {
-            if (status == "success") {
-                loader.style.display = "none";
+            if (status == "success") {        
 
             } else if (status == "error" || status == "timeout") {
                 // ERROR and TIMEOUT request //
@@ -90,6 +92,7 @@
     }
     function Load() {
         var searchText = document.getElementById("search").value;
+        document.getElementById("chats").innerHTML = '<center><span>Loading... <i class="spinner fa fa-sync fa-spin"></i></span></center>';
         $("#chats").load("/Inbox/GetChats", { search: searchText });
     }
     window.onload = function() {
