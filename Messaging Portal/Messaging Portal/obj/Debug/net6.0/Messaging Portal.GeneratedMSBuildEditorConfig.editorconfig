@@ -8,97 +8,121 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Messaging_Portal
 build_property.RootNamespace = Messaging_Portal
-build_property.ProjectDir = D:\New folder\Messaging Portal\Messaging Portal\
+build_property.ProjectDir = d:\New folder\Messaging Portal\Messaging Portal\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\New folder\Messaging Portal\Messaging Portal
+build_property.MSBuildProjectDirectory = d:\New folder\Messaging Portal\Messaging Portal
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Home/Index.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Home/Privacy.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Inbox/Chats.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Inbox/Chats.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ib3hcQ2hhdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Inbox/getChatMessages.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Inbox/getChatMessages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ib3hcZ2V0Q2hhdE1lc3NhZ2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Inbox/getChats.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Inbox/getChats.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ib3hcZ2V0Q2hhdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Inbox/NewChat.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Inbox/NewChat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ib3hcTmV3Q2hhdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Shared/Error.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Keywords/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2V5d29yZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Keywords/CreateTrigger.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2V5d29yZHNcQ3JlYXRlVHJpZ2dlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Keywords/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2V5d29yZHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Keywords/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2V5d29yZHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Keywords/GetList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2V5d29yZHNcR2V0TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Keywords/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2V5d29yZHNcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Shared/_ValidationScriptsPartial.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/ContactsList.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/ContactsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcQ29udGFjdHNMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/createContact.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/createContact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcY3JlYXRlQ29udGFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/createList.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/createList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcY3JlYXRlTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/Delete.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/DeleteContact.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/DeleteContact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcRGVsZXRlQ29udGFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/Edit.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/EditContact.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/EditContact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcRWRpdENvbnRhY3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/getContactsList.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/getContactsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcZ2V0Q29udGFjdHNMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/getList.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/getList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcZ2V0TGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/ImportContacts.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/ImportContacts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcSW1wb3J0Q29udGFjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/List.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Subscribers/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vic2NyaWJlcnNcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/_ViewImports.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/_ViewStart.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/New folder/Messaging Portal/Messaging Portal/Views/Shared/_Layout.cshtml]
+[d:/New folder/Messaging Portal/Messaging Portal/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4q50mdet3i

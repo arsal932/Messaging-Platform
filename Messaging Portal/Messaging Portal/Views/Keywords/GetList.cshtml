@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Messaging_Portal.Models.KeywordsViewModel>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<table id="example1" class="table table-bordered ">
+    <thead class="table-avatar" style="color:#656565;text-align:center">
+        <tr>
+            <th><i class="icon-color fa fa-sort-numeric-down"></i> #</th>
+            <th><i class="icon-color fa fa-university"></i> Name</th>
+            <th><i class="icon-color fa fa-th-list"></i> List</th>
+            <th><i class="icon-color fa fa-users"></i> Contacts</th>
+            <th><i class="icon-color fa fa-key"></i> Triggers</th>
+            <th><i class="icon-color fa fa-calendar-check"></i> Creation Date</th>
+            <th><i class="icon-color fa fa-check"></i> Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 0;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="text-align:center">
+                    @(i + 1)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.List)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Contacts)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Triggers)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Creation_Date)
+                </td>                
+                <td class="project-actions text-right">
+                   @* <button class="btn btn-outline-info btn-sm" onclick="    location.href = '/Subscribers/ContactsList';">
+                        <i class="fa fa-users">
+                        </i>
+                        Contacts
+                    </button>*@
+                    <button class="btn btn-outline-success btn-sm" onclick="loadView('/Keywords/Edit','Modal-xl','ModalxlContent','1')">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Edit
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm" onclick="loadView('/Keywords/Delete','myModal','myModalContent','1')">
+                        <i class="fas fa-trash">
+                        </i>
+                        Delete
+                    </button>
+                </td>
+            </tr>
+            i += 1;
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th><i class="icon-color fa fa-sort-numeric-down"></i> #</th>
+            <th><i class="icon-color fa fa-university"></i> Name</th>
+            <th><i class="icon-color fa fa-th-list"></i> List</th>
+            <th><i class="icon-color fa fa-users"></i> Contacts</th>
+            <th><i class="icon-color fa fa-key"></i> Triggers</th>
+            <th><i class="icon-color fa fa-calendar-check"></i> Creation Date</th>
+            <th><i class="icon-color fa fa-check"></i> Actions</th>
+        </tr>
+    </tfoot>
+</table>
+<script>
+    $(function() {
+
+        $("#example1").DataTable({
+            lengthMenu: [
+                [10, 25, 50, 100, -1],
+                [10, 25, 50, 100, 'All'],
+            ],
+            "responsive": true, "lengthChange": true, "autoWidth": false,
+            "buttons": [
+                {
+                    extend: 'copy',
+                    title: 'Keywords',
+                    text: window.copyButtonTrans,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                },
+                {
+                    extend: 'csv',
+                    title: 'Keywords',
+                    text: window.csvButtonTrans,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                },
+                {
+                    extend: 'excel',
+                    title: 'Keywords',
+                    text: window.excelButtonTrans,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                },
+                {
+                    extend: 'pdf',
+                    title: 'Keywords',
+                    text: window.pdfButtonTrans,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                },
+                {
+                    extend: 'print',
+                    title: 'Keywords',
+                    text: window.printButtonTrans,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                },
+                {
+                    extend: 'colvis',
+                    title: 'Keywords',
+                    text: window.colvisButtonTrans,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                },
+            ]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+</script>
