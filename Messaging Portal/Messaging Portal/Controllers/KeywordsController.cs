@@ -5,8 +5,10 @@ namespace Messaging_Portal.Controllers
 {
     public class KeywordsController : Controller
     {
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(string auto)
         {
+            if(!string.IsNullOrEmpty(auto))
+                ViewBag.auto=auto;
             ViewBag.page = "Keywords";
             return View();
         }
@@ -60,6 +62,42 @@ namespace Messaging_Portal.Controllers
         public async Task<IActionResult> CreateTrigger(TriggerViewModel triggerViewModel)
         {
             return RedirectToAction("List");
+        }
+        public async Task<IActionResult> TriggersList()
+        {
+            //ViewBag.page = "Keywords";
+            return PartialView();
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetTriggersList()
+        {
+            Thread.Sleep(2000);
+            List<TriggerViewModel> Triggers = new List<TriggerViewModel>();
+            Triggers.Add(new TriggerViewModel() { TriggerName = "Trigger 1", Message = "Trigger 1 Message" });
+            Triggers.Add(new TriggerViewModel() { TriggerName = "Trigger 2", Message = "Trigger 2 Message" });
+            Triggers.Add(new TriggerViewModel() { TriggerName = "Trigger 3", Message = "Trigger 3 Message" });
+            Triggers.Add(new TriggerViewModel() { TriggerName = "Trigger 4", Message = "Trigger 4 Message" });
+            return PartialView(Triggers);
+        }
+        [HttpGet]
+        public async Task<IActionResult> EditTrigger()
+        {
+            return PartialView(new TriggerViewModel() { TriggerName = "Subscribe", Message = "Thanks for subscribing us." });
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditTrigger(TriggerViewModel triggerViewModel)
+        {
+            return RedirectToAction("List",new { auto="t"});
+        }
+        [HttpGet]
+        public async Task<IActionResult> DeleteTrigger()
+        {
+            return PartialView(new TriggerViewModel() { TriggerName = "Subscribe", Message="Thanks for subscribing us." });
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteTrigger(TriggerViewModel triggerViewModel)
+        {
+            return RedirectToAction("List", new { auto = "t" });
         }
     }
 }

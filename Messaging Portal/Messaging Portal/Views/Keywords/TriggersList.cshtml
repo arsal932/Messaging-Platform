@@ -1,0 +1,32 @@
+﻿
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Triggers</h3>
+                    <button onclick="hideView('Modal-xl')" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- /.card-header -->
+                <div id="list-level2" class="card-body">
+                </div>
+                <!-- /.card-body -->
+            </div>           
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<script>
+    function Load_sub() {
+        document.getElementById("list-level2").innerHTML = '<center><span>Loading... <i class="spinner fa fa-sync fa-spin"></i></span></center>';
+        $("#list-level2").load("/Keywords/GetTriggersList");
+    }
+    $(function() {
+        Load_sub();
+    });
+</script>

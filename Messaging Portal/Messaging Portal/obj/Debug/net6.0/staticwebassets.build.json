@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TqZ0nOczU5l48DWJgU3Nq+MG+zVHfXA2RY44VbC6Bj8=",
+  "Hash": "Hn4IHgP9hfe5GMwyBICG3vk1N0DL+RLre268FOTWt2A=",
   "Source": "Messaging Portal",
   "BasePath": "_content/Messaging Portal",
   "Mode": "Default",
@@ -2616,6 +2616,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\dist\\img\\message.png"
+    },
+    {
+      "Identity": "D:\\New folder\\Messaging Portal\\Messaging Portal\\wwwroot\\dist\\img\\Mobile.PNG",
+      "SourceId": "Messaging Portal",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\New folder\\Messaging Portal\\Messaging Portal\\wwwroot\\",
+      "BasePath": "_content/Messaging Portal",
+      "RelativePath": "dist/img/Mobile.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\img\\Mobile.PNG"
     },
     {
       "Identity": "D:\\New folder\\Messaging Portal\\Messaging Portal\\wwwroot\\dist\\img\\user1-128x128.jpg",

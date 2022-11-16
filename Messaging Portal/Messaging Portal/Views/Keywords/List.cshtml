@@ -10,9 +10,9 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Keywords</h3>
-                    <div class="project-actions text-right">                        
+                    <div class="project-actions text-right">
                         <button class="button-margin btn btn-info btn-sm float-right" id="btn_addtrgr" onclick="loadView('/Keywords/CreateTrigger','Modal-xl','ModalxlContent')"><i class="fa fa-plus"></i> Add Trigger</button>
-                        <button class="button-margin btn btn-info btn-sm float-right" id="btn_kywrd" onclick="loadView('/Keywords/Create','Modal-xl','ModalxlContent')"><i class="fas fa-key"></i> Add Keyword</button>
+                        <button class="button-margin btn btn-info btn-sm float-right" id="btn_kywrd" onclick="loadView('/Keywords/Create','Modal-xl','ModalxlContent')"><i class="fas fa-fire"></i> Add Keyword</button>
                     </div>
                 </div>
                 <!-- /.card-header -->
@@ -20,7 +20,7 @@
                 </div>
                 <!-- /.card-body -->
             </div>
-             <div id='Modal-xl' class='modal'>
+            <div id='Modal-xl' class='modal'>
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div id='ModalxlContent'></div>
@@ -50,14 +50,19 @@
     window.onload = function() {
         document.getElementById("Keywords").classList.add("active");
         Load();
-    }    
-    function loadView(url, modalId, modalContentID,id) {
+
+        if ('@ViewBag.auto'.toLowerCase()=="t") {
+
+            loadView('/Keywords/TriggersList', 'Modal-xl', 'ModalxlContent', '1')
+        }
+    }
+    function loadView(url, modalId, modalContentID, id) {
         var options = { "backdrop": "static", keyboard: true };
         $.ajax({
             type: "GET",
             url: url,
             contentType: "application/json; charset=utf-8",
-            data: { "list":id },
+            data: { "list": id },
             datatype: "json",
 
             success: function(data) {

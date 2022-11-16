@@ -331,8 +331,8 @@ hr {
 
 .smartphone {
     position: relative;
-    width: 360px;
-    height: 640px;
+    width: 60%;
+    height: 550px;
     margin: auto;
     border: 10px rgb(220, 220, 220) solid;
     border-top-width: 60px;
@@ -380,4 +380,7 @@ hr {
     height: 100%;
     background: white;
     overflow: scroll;
+}
+.login-body {
+    background-color: #17a2b8;
 }
