@@ -1,0 +1,242 @@
+﻿@model Messaging_Portal.Models.CompaignsViewModel
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">New Compaign</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="modal-body">
+                    <div class="text-danger">@ViewBag.Message</div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <form asp-action="Create" method="post">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-sort-alpha-down" style="color:#17a2b8"></i></span>
+                                            </div>
+                                            <input asp-for="CompaignName" type="text" class="form-control" required placeholder="Compaign Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" id="subject" style="display:none">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-sort-alpha-down" style="color:#17a2b8"></i></span>
+                                            </div>
+                                            <input asp-for="Subject" type="text" class="form-control" required placeholder="Subject" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Type:</label>
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                <input onchange="UpdateForm()" id="type_sms" class="form-check-input" type="radio" name="radio1" checked="">
+                                                <label class="form-check-label">SMS</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input onchange="UpdateForm()" id="type_mms" class="form-check-input" type="radio" name="radio1">
+                                                <label class="form-check-label">MMS</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <small>Message</small>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="input-group mb-3">
+                                            <div class="note-toolbar card-header">
+                                                <div class="note-btn-group btn-group note-style">
+                                                    <div class="note-btn-group btn-group">
+                                                        <button type="button" class="note-btn btn btn-light btn-sm">
+                                                            <i class="note-icon-picture"></i> Media
+                                                        </button>
+                                                        <button type="button" class="note-btn btn btn-light btn-sm">
+                                                            <i class="note-icon-picture"></i> Custom Field
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <textarea oninput="UpdateData()" id="message" asp-for="Message" cols="65"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small>Opt-Out Message</small>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="input-group mb-3">
+                                            <textarea asp-for="OptOutMessage" rows="1" cols="65"></textarea>
+                                        </div>
+                                    </div>
+                                </div><hr />
+                                <div id="mms" style="display:none">
+                                    <small>Fall Back Message</small>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="input-group mb-3">
+                                                <div class="note-toolbar card-header">
+                                                    <div class="note-btn-group btn-group note-style">
+                                                        <div class="note-btn-group btn-group">
+                                                            <button type="button" class="note-btn btn btn-light btn-sm">
+                                                                <i class="note-icon-picture"></i> Media
+                                                            </button>
+                                                            <button type="button" class="note-btn btn btn-light btn-sm">
+                                                                <i class="note-icon-picture"></i> Custom Field
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <textarea oninput="UpdateData()" id="message" asp-for="Message" rows="2" cols="65"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <small>Fall back Opt-Out Message</small>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="input-group mb-3">
+                                                <textarea asp-for="OptOutMessage" rows="1" cols="65"></textarea>
+                                            </div>
+                                        </div>
+                                    </div><hr />
+                                </div>
+                                <label>
+                                    Send To:
+                                    <span class="checkbox-inline">
+                                        <input id="cb" onchange="UpdateForm()" type="checkbox" value=""> <small> All</small> 
+                                    </span>
+                                </label>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <span class="checkbox-inline">
+                                            <input id="cb_1" type="checkbox" value=""> Option 1
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <span class="checkbox-inline">
+                                            <input id="cb_2" type="checkbox" value=""> Option 2
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <span class="checkbox-inline">
+                                            <input id="cb_3" type="checkbox" value=""> Option 3
+                                        </span>
+                                    </div>
+                                </div>
+                                @* </div>*@<br />
+                            </form>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default">Back</button>
+                                <button type="submit" class="btn btn-info"><i class="fa fa-plus"></i> Add</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <center><h7>This is just for preview.</h7></center>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="smartphone" style="width:50%;">
+                                        <div class="content">
+                                            <div class="direct-chat-messages" style="height:100% ;">
+                                                <div class="direct-chat-msg">
+                                                    <div class="direct-chat-infos clearfix">
+                                                        <span class="direct-chat-name float-left">+12434344324</span>
+                                                        @*<span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>*@
+                                                    </div>
+                                                    <!-- /.direct-chat-infos -->
+                                                    <!-- /.direct-chat-img -->
+                                                    <div id="to_message" class="direct-chat-text">
+                                                    </div>
+                                                    <!-- /.direct-chat-text -->
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><hr />
+
+
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <div id='Modal-xl' class='modal'>
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div id='ModalxlContent'></div>
+                </div>
+            </div>
+
+        </div>
+        <div id='myModal' class='modal'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id='myModalContent'></div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<script>
+    window.onload = function() {
+        document.getElementById("Compaigns").classList.add("active");
+    }
+    function loadView(url, modalId, modalContentID, id) {
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            type: "GET",
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            data: { "list": id },
+            datatype: "json",
+
+            success: function(data) {
+                $('#' + modalContentID).html(data);
+                $('#' + modalId).modal(options);
+                $('#' + modalId).modal('show');
+
+            },
+            error: function() {
+                alert("An error has occured while loading form.");
+            }
+        });
+    };
+    function hideView(ModalID) {
+        $('#' + ModalID).modal('hide');
+    }
+    function UpdateData() {
+        ChangeText('message', 'to_message');
+    }
+    function ChangeText(from, to) {
+        document.getElementById(to).innerText = document.getElementById(from).value;
+    }
+    function UpdateForm() {
+        if (document.getElementById('type_mms').checked) {
+            document.getElementById('subject').style.display = 'block';
+            document.getElementById('mms').style.display = 'block';
+        }
+        else if (document.getElementById('type_sms').checked) {
+            document.getElementById('subject').style.display = 'none';
+            document.getElementById('mms').style.display = 'none';
+        }
+        document.getElementById('cb_1').checked = document.getElementById('cb').checked;
+        document.getElementById('cb_2').checked = document.getElementById('cb').checked;
+        document.getElementById('cb_3').checked = document.getElementById('cb').checked;
+    }
+</script>

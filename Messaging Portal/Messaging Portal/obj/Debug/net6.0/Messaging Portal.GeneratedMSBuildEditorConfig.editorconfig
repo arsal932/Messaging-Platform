@@ -31,6 +31,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Compaigns/Compaigns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFpZ25zXENvbXBhaWducy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Compaigns/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFpZ25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Compaigns/GetCompaignMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFpZ25zXEdldENvbXBhaWduTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Compaigns/GetCompaigns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFpZ25zXEdldENvbXBhaWducy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/New folder/Messaging Portal/Messaging Portal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

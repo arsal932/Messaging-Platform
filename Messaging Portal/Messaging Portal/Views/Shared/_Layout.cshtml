@@ -111,7 +111,7 @@
                     </a>
                 </li>
                 <li class="nav-item" id="nav_user">
-                    <a href="~/Administration/Users/Actions" class="nav-link">
+                    <a id="Compaigns" href="~/Compaigns/Compaigns" class="nav-link">
                         <i class="nav-icon fa fa-bullhorn"></i>
                         <p>
                             Compaigns
@@ -240,6 +240,12 @@
     <script src="~/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="~/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="~/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+  })
+</script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
