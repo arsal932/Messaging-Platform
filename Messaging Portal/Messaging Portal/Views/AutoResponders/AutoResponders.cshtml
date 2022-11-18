@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Autoresponders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="sticky-top mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        @*<h4 class="card-title">Draggable Events</h4>*@
+                        <div class="form-inline">
+                            <div class="input-group">
+                                <input class="form-control form-control-sidebar" id="search" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button id="btn_search" onclick="    Load();" class="btn btn-sidebar">
+                                        <i class="fas fa-search fa-fw"></i>
+                                    </button>
+                                    <button id="btn_newchat" onclick="location.href='/AutoResponders/Create'" class="btn btn-sidebar btn-info float-right">
+                                        New Autoresponder
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">                                                
+                        <div id="autoresponders" class="card-footer card-comments">
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <!-- /.col -->
+            <!-- /.col -->
+        </div>
+        <div class="col-md-8">
+            <div class="card card-info card-outline direct-chat direct-chat-info shadow-none">
+                <div class="card-header">
+                    <h3 class="card-title"><i class="fa fa-sync"></i> Autoresponder Title <small><span class="badge badge-success">Active</span></small> </h3>
+                </div>
+                <div class="card-body" id="div_messages">
+                </div>
+            </div>
+        </div>
+        <div id='myModal' class='modal'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id='myModalContent'></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    function changeStyle(value) {
+        for (var i = 0; i < 3; i++) {
+            document.getElementById("autoresponder_" + value).className = "chat";
+        }
+        document.getElementById("autoresponder_" + value).className = "active-chat";
+    }
+    function LoadMessages(value) {
+        changeStyle(value);
+        var div_m = document.getElementById("div_messages");
+        div_m.innerHTML = '<center><span>Loading... <i class="spinner fa fa-sync fa-spin"></i></span></center>' + div_m.innerHTML;
+        if (document.getElementById("autoresponder_message") != null) {
+            document.getElementById("autoresponder_message").style.opacity = '0.4';
+        }
+        $("#div_messages").load("/AutoResponders/GetAutoResponderMessage", function(response, status, xhr) {
+            if (status == "success") {
+
+            } else if (status == "error" || status == "timeout") {
+                // ERROR and TIMEOUT request //
+
+                var msg = "Sorry! An error has occurred. Please try again later";
+
+            } else if (status == "notmodified") {
+                // NOT MODIFIED request (likely cached) //
+
+            } else if (status == "abort") {
+                // ABORTED request //
+
+            }
+        });
+    }
+    function Load() {
+        var searchText = document.getElementById("search").value;
+        document.getElementById("autoresponders").innerHTML = '<center><span>Loading... <i class="spinner fa fa-sync fa-spin"></i></span></center>';
+        $("#autoresponders").load("/AutoResponders/GetAutoResponders", { search: searchText });
+    }
+    window.onload = function() {
+        document.getElementById("AutoResponders").classList.add("active");
+        Load();
+    }
+</script>
+<script>
+    function loadView(url, modalId, modalContentID) {
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            url: url,
+            success: function(data) {
+                $('#' + modalContentID).html(data);
+                $('#' + modalId).modal(options);
+                $('#' + modalId).modal('show');
+
+            },
+            error: function() {
+                alert("An error has occured while loading form.");
+            }
+        });
+    };
+    function hideView(ModalID) {
+        $('#' + ModalID).modal('hide');
+    }
+</script>

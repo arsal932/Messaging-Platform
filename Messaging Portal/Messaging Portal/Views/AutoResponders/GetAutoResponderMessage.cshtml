@@ -1,0 +1,89 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div id="autoresponder_message">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="float-right">
+                <small onclick="location.href='/AutoResponders/Edit'"><i class="fas fa-pencil-alt"></i> </small>
+                <small onclick="loadView('/AutoResponders/Delete','myModal','myModalContent')" ><i class="fa fa-trash"></i></small>                
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="padding-left:2%">
+                    <label>Delay </label><span> 10 Mintues.</span><br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="padding-left:2%">
+                    <label>Sent to </label><span> 3 contacts.</span><br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="padding-left:2%">
+                    @for (int i = 0; i < 10; i++)
+                    {
+                        <span class="badge badge-info"> <small>Subscriber List # @i</small></span>
+                    }
+                </div>
+            </div><hr />
+            <!-- Conversations are loaded here -->
+            <!-- Message. Default to the left -->
+            <div class="direct-chat-msg" style="padding-left:2%;">
+                <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-left">Message</span>
+                    <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                </div>
+                <!-- /.direct-chat-infos -->
+                <!-- /.direct-chat-img -->
+                <div class="direct-chat-text">
+                    Is this template really for free? That's unbelievable!Is this template really for free? That's unbelievable!Is this template really for free? That's unbelievable!Is this template really for free? That's unbelievable!Is this template really for free? That's unbelievable!Is this template really for free? That's unbelievable!
+                </div>
+                <!-- /.direct-chat-text -->
+            </div>
+
+            <hr />
+            <div class="row">
+                <div class="col-sm-12" style="padding-left:2%">
+                    <label> Analytics</label>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <span class="badge badge-success">Total Sent : 0</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="badge badge-danger">Total Opt-outs : 0</span>
+                        </div>
+                    </div>
+                </div>
+            </div><hr />
+            <div class="row">
+                <div class="col-sm-12" style="padding-left:2%">
+                    <small>Success rate: 80%</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="padding-left:2%">
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-info" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+        <!-- /.direct-chat-pane -->
+        <div class="card-footer">
+            @*<form action="#" method="post">*@
+            @*<div class="input-group">
+            <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+            <span class="input-group-append">
+            <button onclick="LoadMessages(@ViewBag.CompaignID)" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+            </span>
+            </div>*@
+            @*</form>*@
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        //document.getElementById("messages_loader").style.display = "none";
+    });
+</script>

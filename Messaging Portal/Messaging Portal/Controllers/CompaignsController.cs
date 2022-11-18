@@ -8,13 +8,23 @@ namespace Messaging_Portal.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            ViewBag.Page="Compaigns";
-            return PartialView();
+            ViewBag.Page = "Compaigns";
+            return View();
+        }        
+        [HttpGet]
+        public async Task<IActionResult> Delete()
+        {
+            return PartialView(new CompaignsViewModel() { CompaignName = "MyCompaign" });            
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(CompaignsViewModel compaignsViewModel)
+        {
+            return RedirectToAction("Compaigns");
         }
         [HttpPost]
         public async Task<IActionResult> Create(CompaignsViewModel compaignsViewModel)
         {
-            return PartialView();
+            return View();
         }
         [HttpGet]
         public async Task<IActionResult> Compaigns()

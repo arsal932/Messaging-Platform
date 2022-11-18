@@ -31,12 +31,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/New folder/Messaging Portal/Messaging Portal/Views/AutoResponders/AutoResponders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1Jlc3BvbmRlcnNcQXV0b1Jlc3BvbmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/AutoResponders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1Jlc3BvbmRlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/AutoResponders/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1Jlc3BvbmRlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/AutoResponders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1Jlc3BvbmRlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/AutoResponders/GetAutoResponderMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1Jlc3BvbmRlcnNcR2V0QXV0b1Jlc3BvbmRlck1lc3NhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/AutoResponders/GetAutoResponders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b1Jlc3BvbmRlcnNcR2V0QXV0b1Jlc3BvbmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/New folder/Messaging Portal/Messaging Portal/Views/Compaigns/Compaigns.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFpZ25zXENvbXBhaWducy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/New folder/Messaging Portal/Messaging Portal/Views/Compaigns/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFpZ25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder/Messaging Portal/Messaging Portal/Views/Compaigns/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFpZ25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/New folder/Messaging Portal/Messaging Portal/Views/Compaigns/GetCompaignMessage.cshtml]
