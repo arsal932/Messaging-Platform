@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card card-default">
+                <div class="card-header">
+                    <div class="col-sm-8">
+                        <h4><a href="#"><u>Plan</u></a></h4>
+                        <small><b> 45$ / Month</b> Next payment in 10 days.</small>
+                    </div>
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-info" style="width: 80%"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-8">
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <small><b>1960</b> Total Remaining Credits.</small>
+                        </div>
+                        <div class="col-sm-6">
+                            <small><b>32</b> Credits used.</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+            <div class="card card-default">
+                <div class="card-header">
+                    <small class="card-title">Bar Chart</small>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool active">
+                            <small>Current Timings Cycle</small>
+                        </button>
+                        <button type="button" class="btn btn-tool">
+                            <small>Last 7 Days</small>
+                        </button>
+                        <button type="button" class="btn btn-tool">
+                            <small>Last 30 Days</small>
+                        </button>
+                        <button type="button" class="btn btn-tool">
+                            <small>Last 90 Days</small>
+                        </button>
+                    </div>
+                </div>
+                <div id="_barchart" class="card-body">
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <div id='Modal-xl' class='modal'>
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div id='ModalxlContent'></div>
+                    </div>
+                </div>
+
+            </div>
+            <div id='myModal' class='modal'>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div id='myModalContent'></div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<script>
+    function Load() {
+        document.getElementById("_barchart").innerHTML = '<center><span>Loading... <i class="spinner fa fa-sync fa-spin"></i></span></center>';
+        $("#_barchart").load("/Dashboard/GetBarChart");
+    }
+    window.onload = function() {
+        document.getElementById("_Dashboard").classList.add("active");
+        Load();
+
+        if ('@ViewBag.auto'.toLowerCase() == "t") {
+
+            loadView('/Keywords/TriggersList', 'Modal-xl', 'ModalxlContent', '1')
+        }
+
+    }
+    function loadView(url, modalId, modalContentID, id) {
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            type: "GET",
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            data: { "list": id },
+            datatype: "json",
+
+            success: function(data) {
+                $('#' + modalContentID).html(data);
+                $('#' + modalId).modal(options);
+                $('#' + modalId).modal('show');
+
+            },
+            error: function() {
+                alert("An error has occured while loading form.");
+            }
+        });
+    };
+    function hideView(ModalID) {
+        $('#' + ModalID).modal('hide');
+    }
+</script>

@@ -111,7 +111,7 @@
                                 <label>
                                     Send To:
                                     <span class="checkbox-inline">
-                                        <input id="cb" onchange="UpdateForm()" type="checkbox" value=""> <small> All</small> 
+                                        <input id="cb" onchange="UpdateForm()" type="checkbox" value=""> <small> All</small>
                                     </span>
                                 </label>
                                 <div class="row">
@@ -130,6 +130,42 @@
                                             <input id="cb_3" type="checkbox" value=""> Option 3
                                         </span>
                                     </div>
+                                </div><hr />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <small>WHEN TO SEND</small>
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                <input onchange="UpdateForm()" id="type_instant" class="form-check-input" type="radio" name="radio2" checked="">
+                                                <label class="form-check-label">Immediately</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input onchange="UpdateForm()" id="type_schedule" class="form-check-input" type="radio" name="radio2">
+                                                <label class="form-check-label">After Delay</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="schedule" style="display:none">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <input type="date" />
+                                                </div>
+                                                <select >
+                                                    <option selected>Hour</option>
+                                                </select>
+                                                <select >
+                                                    <option selected>Minutes</option>
+                                                </select>
+                                                <select >
+                                                    <option selected>Seconds</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
                                 </div>
                                 @* </div>*@<br />
                             </form>
@@ -234,6 +270,13 @@
         else if (document.getElementById('type_sms').checked) {
             document.getElementById('subject').style.display = 'none';
             document.getElementById('mms').style.display = 'none';
+        }
+
+        if (document.getElementById('type_schedule').checked) {
+            document.getElementById('schedule').style.display = 'block';
+        }
+        else if (document.getElementById('type_instant').checked) {
+            document.getElementById('schedule').style.display = 'none';
         }
         document.getElementById('cb_1').checked = document.getElementById('cb').checked;
         document.getElementById('cb_2').checked = document.getElementById('cb').checked;
